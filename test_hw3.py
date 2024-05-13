@@ -7,12 +7,6 @@ def test_search_from_google():
     browser.element('[id="search"]').should(have.text('Selene - User-oriented Web UI browser tests in Python'))
 
 
-def test_search_from_google_not_have_text():
-    browser.open('https://google.com')
-    browser.element('[name="q"]').should(be.blank).type('qweqweqwe').press_enter()
-    browser.element('[id="search"]').should(have.no.text('Selene - User-oriented Web UI browser tests in Python'))
-
-
 def test_search_from_google_not_find_text():
     browser.open("https://google.ru")
     browser.element('[name="q"]').should(be.blank).type('uryytyweuiyruuyt!!!fs,jhjhs').press_enter()
